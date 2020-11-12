@@ -180,7 +180,6 @@ $(document).ready(function () {
                         $.ajax(
                             {
 
-                                // var titleid = result1[i].id;
                                 url: "http://localhost:3000/posts/" + titleid,
                                 success: function (result) {
                                     result1 = result;
@@ -190,8 +189,7 @@ $(document).ready(function () {
                                        
                                         localStorage.setItem("readData",JSON.stringify(result1));
                                         location.assign('demo.html');
-                                        // $(".mydiv").append(para);
-
+                                        
 
                                     }
                                     else {
@@ -247,28 +245,25 @@ $.ajax({
         console.log(x);
         var mainc=$('<nav></nav>').appendTo('#myCarousel').attr('aria-label',"Page navigation example");
         var ulist=$('<ul></ul>').appendTo(mainc).addClass('pagination').addClass('justify-content-center');
-        //var mainc=$('<ol></ol>').appendTo('#myCarousel').addClass('carousel-indicators');
-     //   $(' <li class="page-item"><a id="previous" class="page-link" href="#">Previous</a></li>').appendTo(ulist);
+       
       for(var k=0;k<x.length/4;k++)
       { 
-        //  $('#previous').attr('data-slide-to',`${k-1}`);
+        
          var li= $('<li></li>').appendTo(ulist).addClass('page-item')
          $(`<a>${k+1}</a>`).appendTo(li).addClass('page-link').attr('href','#')
          .attr('data-target','#myCarousel').attr('data-slide-to',`${k}`).addClass('active');
-        //<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-       // $('#next').attr('data-slide-to',`${k+1}`);
+        
           if(k==0)
           {
             console.log(k);
-           // $('<li></li>').appendTo(mainc).attr('data-target','#myCarousel')
-          //  .attr('data-slide-to',`${k}`).addClass('active');
+
           }
           else{
             console.log(k);
-//$('<li></li>').appendTo(mainc).attr('data-target','#myCarousel').attr('data-slide-to',`${k}`);
+
           }
       }
-   //   $(' <li class="page-item"><a id="next" class="page-link" href="#">Next</a></li>').appendTo(ulist);
+  
      
       var j=1,l=2,m=3;
       for(var i=0;i<x.length;)
@@ -327,25 +322,6 @@ carousel(item,i,j,l,m);
         i=i+4;
 }
       }
-    /*    x.forEach((result, idx) => {
-            function carousel(item)
-            {
-                var content=$('<div></div>').appendTo(item).addClass('container')
-                .attr('id','myContent');
-                $(`<h1>${result.title}</h1>`).appendTo(content);
-                $(`<p>${result.content}</p>`).appendTo(content);
-            }
-        if(idx==0){
-            var item= $('<div></div>').appendTo('#c').addClass('carousel-item')
-.addClass('active');
-carousel(item);
-        }else{
-            var item= $('<div></div>').appendTo('#c').addClass('carousel-item');
-            carousel(item);
-        }
-      
-    })
-    
-*/
+  
   
 })

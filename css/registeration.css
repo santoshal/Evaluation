@@ -1,4 +1,4 @@
-/* @import '../bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.css'; */
+@import '../bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.css';
 
 /* body {
     background: url('https://www.strikingly.com/content/static/01860dce6859ba49fd670be737ab09c9/6f021/2019-12-13-background-image-for-website.jpg') fixed;
@@ -13,24 +13,21 @@
   border-radius: 50%;
   float: right;
 }
-.myReg{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    margin-top: -180px;
+.pages{
+  background: url('https://www.strikingly.com/content/static/01860dce6859ba49fd670be737ab09c9/6f021/2019-12-13-background-image-for-website.jpg') fixed;
+   background-size: cover;
+}
+   
+ 
+#newwindow
+{
+  text-align:center;
+padding-left: 20px;
+padding-right: 20px;
+
 
 }
- .myLog{
-    display: none;
-    /* justify-content: center; */
-    margin-top: -180px;
 
-    /* text-align: start; */
-}
-
-/* .mycont{
-    overflow: hidden;
-} */
 .mydiv{
     background-color: white;
     text-align: center;
@@ -81,24 +78,11 @@ h2{
     padding-bottom: 20px;
 }
 
-/* .blog{
-    background-color: yellow;
-    width: 300px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(70, 28, 28);
-}
-label{
-    text-align: left;
-} */
-
  @media (max-width:576px){
      .hrFrm{
          flex-direction: column;
      }
 }
-
-
-
 
 /* Profile css */
 

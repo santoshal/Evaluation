@@ -6,6 +6,55 @@
       "password": "587c57365b54e8283fd6b1ac24acf29d",
       "gender": "Male",
       "id": 1
+    },
+    {
+      "name": "Vishal Nikam",
+      "email": "Vishal@gmail.com",
+      "password": "c9e55fc0be18bed4a9c695a6d8ac2840",
+      "gender": "Male",
+      "id": 2
+    },
+    {
+      "name": "Rupali ",
+      "email": "rupali@gmail.com",
+      "password": "8c14af8a19c4b0d77a4fc68ac3dfafb0",
+      "gender": "Male",
+      "id": 3
+    },
+    {
+      "name": "aishi yedi",
+      "email": "aishiyedi@gmail.com",
+      "password": "0c530bb3673e029e030bc454d5df0b16",
+      "gender": "Female",
+      "id": 4
+    },
+    {
+      "name": "pri yedi",
+      "email": "priyedi@gmail.com",
+      "password": "e060bb629c10e1b143614cc1e9ccdc67",
+      "gender": "Female",
+      "id": 5
+    },
+    {
+      "name": "poopatil",
+      "email": "poopatil@gmail.com",
+      "password": "f3ede926587776a8cd79fb2afe4e07b4",
+      "gender": "Female",
+      "id": 6
+    },
+    {
+      "name": "poooo",
+      "email": "pooopatil@gmail.com",
+      "password": "f6122c971aeb03476bf01623b09ddfd4",
+      "gender": "Female",
+      "id": 7
+    },
+    {
+      "name": "Santosh Aland",
+      "email": "sant@gmail.com",
+      "password": "3aafca8902c93c810ae9f7245be6a6d8",
+      "gender": "Male",
+      "id": 8
     }
   ],
   "posts": [
@@ -17,7 +66,7 @@
       "timestamp": "11-11-2020 10:23:42",
       "author": "santosh aland",
       "emailid": "santoshal@cybage.com",
-      "like": "0",
+      "like": "1",
       "id": 1
     },
     {
@@ -47,6 +96,11 @@
       "pid": "3",
       "uid": "1",
       "id": 3
+    },
+    {
+      "pid": "1",
+      "uid": "2",
+      "id": 4
     }
   ],
   "comments": [
@@ -62,16 +116,10 @@
       "id": 2
     },
     {
-      "body": "done well",
-      "postId": 4,
-      "userId": "SHOBHIT",
-      "id": 3
-    },
-    {
-      "body": "nice blog",
-      "postId": 3,
-      "userId": "Santosh Aland",
-      "id": 4
+      "body": "nice",
+      "postId": 1,
+      "userId": "Vishal Nikam",
+      "id": 5
     }
   ]
 }

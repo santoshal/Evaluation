@@ -22,6 +22,7 @@ const responsive = {
 
 
 $(document).ready(function () {
+    $('.content').richText();
 
     $nav = $('.nav');
     $toggleCollapse = $('.toggle-collapse');
@@ -34,7 +35,7 @@ $(document).ready(function () {
         url:"http://localhost:3000/posts",
         method:"GET",
         success:(x)=>{
-           // console.log(x);
+           
             x.forEach(key => {
                 console.log(key.category);
                 if(key.category=="Travel")
@@ -54,13 +55,6 @@ $(document).ready(function () {
                     count[3]++;    
                 }
         })
-    //    // console.log(count[3]);
-    //    $('#count5').append("     "+'('+count[3]+')')
-    //   //  $('#Fashion').append("     "+'('+count[1]+')');
-    //  // $(`(${count[3]})`).appendTo('#ed_button')
-    //    //$('#ed_button').append("     "+'('+count[3]+')');
-    //     $('#ed_button').append(" "+'('+count[3]+')');
-    //     //console.log(count[0]+" "+count[1]+" "+count[2]);
         }
     });
 
@@ -238,67 +232,13 @@ function displayGetdata(x,c,index){
     })
     var postsId;
 
-
-    // //readMore Logic
-    // $.ajax({
-    //     url: "http://localhost:3000/posts",
-    //     method: "get",
-    //     dataType: 'json',
-    //     success: (x) => {
-    //         allposts = x;
-    //         console.log(x)
-
-    //         x.forEach((result, idx) => {
-    //             carousel(result);
-    //             $(".allPosts").append(div1);
-
-    //         });
-    //         if (idx == 0) {
-    //             var item = $('<div></div>').appendTo('#c').addClass('carousel-item')
-    //                 .addClass('active');
-    //             carousel(item);
-    //         } else {
-    //             var item = $('<div></div>').appendTo('#c').addClass('carousel-item');
-    //             carousel(item);
-    //         }
-
-    //     }
-    // })
-
-
-    // //Dynamic Grid Creation
-    // function carousel(result) {
-
-    //     div1 = document.createElement('div');
-    //     div1.className = "card";
-    //     img = document.createElement('img');
-    //     img.src = result.imageurl;
-    //     img.className = "card-img-top";
-    //     para = document.createElement('p');
-    //     para.className = "card-text";
-    //     para.innerHTML = result.Content.slice(0, 100);
-    //     var ids = result.id;
-    //     let anchor = document.createElement('a');
-    //     //    debugger;
-    //     // anchor.href = "#";
-    //     anchor.id = "readme";
-    //     anchor.innerText = "Read More....";
-    //     div1.append(img);
-    //     div1.append(para);
-    //     div1.append(anchor);
-
-    //     anchor.onclick = function () {
-    //         getSpecificContent(ids);
-
-    //     }
-    // }
     function getSpecificContent(ids) 
     {
         
         console.log('http://localhost:3000/posts/' + ids);
         $.getJSON('http://localhost:3000/posts/' + ids, (data) => {
 
-            // localStorage.setItem("searchObj", JSON.stringify(result));
+           
             if (sessionStorage.getItem('user') != null) {
 
                 localStorage.setItem("readData", JSON.stringify(data));
@@ -333,7 +273,6 @@ function displayGetdata(x,c,index){
                 categories.push(allposts[i]);
             
 
-               // $(".filterPost").append(div1);
 
             }
         }
@@ -355,7 +294,7 @@ function displayGetdata(x,c,index){
         document.getElementById('text').innerText = "";
         for (i = 0; i < allposts.length; i++) {
 
-            // debugger;
+      
             if (input.val() != "") {
 
                 txtValue = allposts[i].title;
@@ -387,4 +326,52 @@ function displayGetdata(x,c,index){
 
         }
     });
+
+
+
+    //text-editor Window display
+$(".createblog").click(function(){
+    $(".searchbar").hide();
+    $("#texteditor").show();
+    $(".site-title").hide();
+  })
+  //Post the blog Ajax call
+    //post the blog
+    $("#post").click(function(){  
+      var sessionObj = JSON.parse(sessionStorage.getItem('user'));
+      console.log(sessionObj.name);
+      debugger;
+      var time= new Date($.now());
+      var timestamp=time.getDate()+"-"+(time.getMonth()+1)+"-"+time.getFullYear()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();   
+      if($("#title").val()==="")
+      {
+        alert("Enter the title of blog");
+      }   
+      else{
+        $.ajax({           
+          type: 'POST',
+          dataType: 'json',          
+          url: 'http://localhost:3000/posts',
+          data: {
+           "Content":$(".content").val(),
+           "category":$("#category :selected").val(),
+           "title":$("#title").val(),
+           "imageurl":$("#image").val(),
+           "timestamp":timestamp,
+           "author":sessionObj.name,
+           "emailid":sessionObj.email,
+           "like":"0"
+          
+          } ,             
+          dataType:'json',
+          success: function(result){              
+              console.log('result');
+          }                     
+        })
+        $("#texteditor").hide();
+        $('.serachbar').show();
+       
+      }  
+    });
+  
 });

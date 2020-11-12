@@ -148,23 +148,6 @@ function posting (pid,uid){
 
   var postId1;
   var blogarr;
-  // sessionStorage.setItem('profileid', 5);
-
-  // $.ajax({
-  //   url: 'http://localhost:3000/posts?id=1',
-  //   type: 'GET',
-  //   success: (data) => {
-  //     postId1 = data[0].id;
-  //     for (var i = 0; i < data.length; i++) {
-  //       // $('<img src='+data[i].img+'></img>').appendTo("#postid");
-
-  //       $('<h1>' + data[i].title + '</h1>').appendTo('#postid');
-  //       // $('<h3> Created At :'+data[i].content+'</h3>').appendTo("#postid");
-  //       // $('<h3> Category :'+data[i].password+'</h3>').appendTo("#postid");
-  //       // $('<h3> Description :'+data[i].gender+'</h3>').appendTo("#postid");
-  //     }
-  //   },
-  // });
 
   $.ajax({
     url: 'http://localhost:3000/posts',

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./Rich-Text-Editor-jQuery-RichText/src/richtext.min.css">    
    
     <!----------- custom style --------------->
+    <link rel="stylesheet" href="./css/carousel.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/registeration.css">
     <link rel="stylesheet" href="./css/owl.carousel.min.css">
@@ -24,40 +25,7 @@
     <script src="./js/index.js"></script>
 
     <style>
-        .carousel-item{
-            height: 35rem;
-            background-color: silver;
-            margin:5px;
-            background-color:  rgba(231, 130, 130, 0.2);
-        }
-       .arrange{
-         border: solid black;
-         border-radius: 5px;
-         height: 15rem;
-         margin: 5px; 
-         padding:5px;
-       
-       }
-       @media (width:780px)
-       {
-         .arrange{
-           height: 20rem;
-         }
-         .carousel-item{
-           height: 45rem;
-         }
-       }
-       @media (width:300px)
-       {
-         .arrange{
-           height: 30rem;
-         }
-         .carousel-item{
-           height: 60rem;
-         }
-       }
-       .word-wrap
-       {word-wrap: break-word;}
+        
     </style>
 </head>
 <body>
@@ -76,18 +44,17 @@
 
        <div>
            <ul class="nav-items">
-               <li class="nav-link">
+               
+            <li class="nav-link">
                    <a href="index.html">Home</a>
-               </li>
-               <li class="nav-link">
-                <a href="#">Categories</a>
             </li>
-    
+               
             <li class="nav-link a">
-                <a href="#" id="mysingUpButton" class="reg">Sign-Up</a>
+                <a href="registeration.html">Sign-Up</a>
+            
             </li>
             <li class="nav-link">
-                <a href="#" id="mylogButton" class="log">Login</a>
+                <a href="login.html" id="mylogButton" class="log">Login</a>
             </li>
             <li class="nav-link">
                 <a href="#" id="mylogOutButton">Logout</a>
@@ -100,8 +67,6 @@
                   ViewProfile
                   </a>
             </li>
-
-          
            </ul>
        </div>
 
@@ -111,40 +76,6 @@
 
    
 </nav>
-
-<!-- Update User Profile
-<div class="editMyProfile">
-              
-    <div class="container rounded bg-white mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-5 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src="./assets/profile/pngtree-user-icon-png-image_1796659.jpg"><span class="font-weight-bold" id="nameOfUser"></span><span class="text-black-50" id="emailOfUser">amelly12@bbb.com</span><span> </span></div>
-            </div>
-            <div class="col-md-7 border-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" id="showName" placeholder="name" value=""></div>
-                        
-                    </div>
-                    <div class="row mt-3">
-                       
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" id="showEmail" placeholder="enter email id" readonly></div>
-                     <div class="col-md-12"><label class="labels">Gender</label><input type="text" class="form-control" id="showGender" placeholder="gender" readonly></div> 
-                    </div>
-                   
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" id="saveInfo" type="button">Save Profile</button></div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    </div>
-    </div>
-    </div>
-  </div> -->
 
 
 <!-- Texteditor html -->
@@ -192,99 +123,10 @@
              <div class="mydiv">
 
              </div>
-             <div class="container">
-                 <div class="registeartion">
-                <form class="form-horizontal reg myReg" role="form" id="registerationForm">
-                    <h2>Registration</h2>
-                    <br>
-                    <div class="form-group hrFrm">
-                        <label for="#name" class="col-sm-3 control-label">Name*</label>
-                        <div class="col-sm-9">
-                            <input type="text" id="name" placeholder="John Kennedy" class="form-control" autofocus>
-                        </div>
-                    </div>
-        
-                    <div class="form-group hrFrm">
-                        <label for="mail" class="col-sm-3 control-label">Email* </label>
-                        <div class="col-sm-9">
-                            <input type="email" id="mymail" placeholder="john@gmail.com" class="form-control" name="email"
-                                required>
-                                <span id="mailCheck"></span>
-                        </div>
-                    </div>
-                    <div class="form-group hrFrm">
-                        <label for="password" class="col-sm-3 control-label">Password*</label>
-                        <div class="col-sm-9">
-                            <input type="password" id="password" placeholder="Password" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="form-group hrFrm">
-                        <label for="cPassword" class="col-sm-3 control-label">Confirm Password*</label>
-                        <div class="col-sm-9">
-                            <input type="password" id="cPassword" placeholder="Password" class="form-control" required>
-                            <span id="cp"></span>
-                        </div>
-                    </div>
-                    <div class="form-group hrFrm">
-                        <label class="control-label col-sm-3">Gender</label>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="gender" id="femaleRadio" value="Female">Female
-                                    </label>
-                                </div>
-                                <div class="col-sm-4">
-                                    <label class="radio-inline">
-                                        <input type="radio" name="gender" id="maleRadio" value="Male">Male
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="form-group">
-                        <div class="col-sm-9 col-sm-offset-3">
-                            <span class="help-block">*Required fields</span>
-                        </div>
-                    </div>
-                    <button type="submit" id="sub" class="btn btn-primary btn-block">Register</button>
-                </form>
-                </div>
-
+            
             <!-- login Form -->
-            <div class="loginPage">
-                <form action="../html/sucess.html" method="post" class="form-horizontal login log myLog" id="loginForm">
-                    <div class="form-group">
-                        <label for="loginMail" class="col-sm-3 control-label">Email* </label>
-                        <div class="col-sm-12">
-                            <input type="email" id="loginMail" placeholder="john@gmail.com" class="form-control" name="email"
-                                required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword" class="col-sm-3 control-label">Password*</label>
-                        <div class="col-sm-12">
-                            <input type="password" id="loginPassword" placeholder="Password" class="form-control" required>
-                        </div>
-                    </div>
-                       <div class="col-sm-9">
-                           <span id="validLogin"></span>
-                       </div>
-                    <div class="col-sm-12">
-                        <input type="submit" class="btn btn-primary btn-block" value="Login">
-                    </div>
-                    <br>
-                    <div>
-                        
-                        Not Registered? <a href="#" class="createAcc">Create Account</a>
-                        
-                    </div>
-        
-                </form>
+         
             </div>
-            </div>
-        </div>
     </section>
 <!----------------*-------- title ------------*----------->
 
@@ -372,37 +214,14 @@
         <div class="carousel slide" id="myCarousel1" data-interval="false" data-ride="carousel">
             <div class="carousel-inner"  id="c1">
         </div> 
-     
-    
       </div>  
 
 
-
-        <!-- <div class="card-group allPosts">
-            
-        </div>
-        <div class="card-group filterPost">
-            
-        </div> -->
-
-
-        <!-- <div class="carousel slide" id="myCarousel" data-ride="carousel">
-            <div class="carousel-inner" id="c">
-        </div> 
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-           <span class="sr-only">Previous</span> 
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a> -->
         </div>  
     </div>
 <!-- Optional JavaScript -->
 
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
  
 
 <!-------------------------- Blogs ---------------------------->
@@ -416,7 +235,6 @@
                 <p>
                      Santosh Aland <br />
                      Aishwarya Murkute <br />
-                     Minal Kulkarni <br />
                      Minal Kulkarni <br />
                      Prajakta Bhamare <br />
                      Aditya Dhopade <br />
@@ -432,7 +250,7 @@
                     Survey No 13A/ 1+2+3/1
                     Wadgaon Sheri
                     Pune, Maharashtra - 411014
-                    <!-- <h2>Follow Us</h2> -->
+                   
                     <p>Contact-Us : 9876543210</p>
                   </p>
             </div>
@@ -456,7 +274,7 @@
             </div>
             <div class="follow">
                 <h2>Follow Us</h2>
-                <!-- <p>Contact-Us : 9876543210</p> -->
+                
                 <div class="social text-graya">
                      <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
